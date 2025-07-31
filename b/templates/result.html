@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Results - AI Career Navigator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Your Recommended Career Path</h2>
+        <div class="card result-card">
+            <div class="result">
+                {{ recommendation|safe }}
+            </div>
+            <div style="text-align: center;">
+                <a href="/quiz" class="try-again">Take Quiz Again</a>
+                <a href="/" class="start-btn" style="margin-left: 15px;">Back to Home</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
