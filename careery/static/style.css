@@ -1,0 +1,176 @@
+/* === THEME VARIABLES === */
+:root {
+    --bg-gradient-start: #eafaf1;
+    --bg-gradient-end: #d0f0dc;
+    --primary-color: #43b581;
+    --primary-dark: #369a6d;
+    --accent-color: #1c5138;
+    --card-bg: #f1fdf6;
+    --card-border: #c7edd8;
+    --input-border: #b4d9c0;
+    --result-bg: #e2f6ec;
+    --result-border: #bae7d1;
+}
+
+/* 🌇 SUNSET THEME OVERRIDES */
+.sunset-theme {
+    --bg-gradient-start: #fff3f0;
+    --bg-gradient-end: #ffe6e0;
+    --primary-color: #ff6f61;
+    --primary-dark: #d85a4f;
+    --accent-color: #a03e2d;
+    --card-bg: #fff5f2;
+    --card-border: #ffd8cd;
+    --input-border: #f5b9aa;
+    --result-bg: #fff0ea;
+    --result-border: #ffcfc2;
+}
+
+/* === RESET === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* === BASE BODY === */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, var(--bg-gradient-start), var(--bg-gradient-end));
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    transition: background 0.5s ease;
+}
+
+/* === CONTAINER === */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+}
+
+/* === HEADINGS === */
+h1, h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--accent-color);
+}
+
+/* === CARDS === */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 30px 20px;
+    margin-bottom: 20px;
+}
+
+/* === QUESTIONS === */
+.question {
+    margin-bottom: 25px;
+}
+
+.question label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--accent-color);
+}
+
+.question input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.question input[type="text"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+/* === BUTTONS === */
+.start-btn,
+.try-again,
+input[type="submit"],
+#themeToggleBtn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.start-btn:hover,
+input[type="submit"]:hover,
+#themeToggleBtn:hover {
+    background-color: var(--primary-dark);
+}
+
+.try-again {
+    background-color: #6c757d;
+}
+
+.try-again:hover {
+    background-color: #5a6268;
+}
+
+/* === RESULTS === */
+.result-card {
+    background-color: var(--result-bg);
+    border: 1px solid var(--result-border);
+    padding: 25px 20px;
+    border-radius: 12px;
+}
+
+.result {
+    font-size: 1.05rem;
+    color: #333;
+}
+
+.result h3 {
+    color: var(--accent-color);
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.result ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.result li {
+    margin-bottom: 8px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 600px) {
+    .container {
+        padding: 25px 15px;
+    }
+
+    .question input[type="text"] {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+    .start-btn,
+    .try-again,
+    input[type="submit"],
+    #themeToggleBtn {
+        width: 100%;
+        margin-top: 10px;
+    }
+}

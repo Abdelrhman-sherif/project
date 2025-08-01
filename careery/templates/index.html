@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Career Navigator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ _('Welcome to AI Career Navigator') }}</h1>
+        <div style="text-align: center; margin-bottom: 20px;">
+            <button id="themeToggleBtn" class="start-btn" style="background-color: var(--accent-color);">Switch Theme</button>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 20px;">
+            <a href="?lang=en" class="start-btn">English</a>
+            <a href="?lang=ar" class="start-btn">العربية</a>
+        </div>
+
+        <div class="card">
+            <p style="text-align: center; margin-bottom: 25px; font-size: 1.2rem; color: #666;">
+                {{ _('Discover your perfect career path with our AI-powered assessment') }}
+            </p>
+            <div style="text-align: center;">
+                <a href="/quiz" class="start-btn">Start Your Career Quiz</a>
+            </div>
+        </div>
+    </div>
+<script>
+    const toggleBtn = document.getElementById('themeToggleBtn');
+    const body = document.body;
+
+    // Load saved theme
+    if (localStorage.getItem("theme") === "sunset") {
+        body.classList.add("sunset-theme");
+    }
+
+    toggleBtn.addEventListener('click', () => {
+        body.classList.toggle('sunset-theme');
+        const newTheme = body.classList.contains('sunset-theme') ? "sunset" : "default";
+        localStorage.setItem("theme", newTheme);
+    });
+</script>
+</body>
+</html>
